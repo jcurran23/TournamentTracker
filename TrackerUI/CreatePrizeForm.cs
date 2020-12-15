@@ -105,9 +105,6 @@ namespace TrackerUI
             return output;
         }
 
-        private void placeNumberValue_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

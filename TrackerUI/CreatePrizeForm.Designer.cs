@@ -58,7 +58,7 @@
             this.placeNumberValue.Name = "placeNumberValue";
             this.placeNumberValue.Size = new System.Drawing.Size(250, 35);
             this.placeNumberValue.TabIndex = 13;
-            this.placeNumberValue.TextChanged += new System.EventHandler(this.placeNumberValue_TextChanged);
+
             // 
             // placeNumberLabel
             // 
