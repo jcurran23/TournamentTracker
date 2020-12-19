@@ -126,7 +126,7 @@
             this.prizePercentageLabel.Size = new System.Drawing.Size(212, 37);
             this.prizePercentageLabel.TabIndex = 18;
             this.prizePercentageLabel.Text = "Prize Percentage";
-            this.prizePercentageLabel.Click += new System.EventHandler(this.prizePercentageLabel_Click);
+           // this.prizePercentageLabel.Click += new System.EventHandler(this.prizePercentageLabel_Click);
             // 
             // orLabel
             // 

@@ -19,11 +19,6 @@ namespace TrackerUI
             InitializeComponent();
         }
 
-        private void prizePercentageLabel_Click(object sender, EventArgs e)
-        {
-
- 
-        }
 
         private void createPrizeButton_Click(object sender, EventArgs e)
         {
@@ -38,11 +33,7 @@ namespace TrackerUI
                     prizeAmountValue.Text,
                     prizePercentageValue.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connections)
-                {
-                    db.CreatePrize(model);
-
-                }
+                GlobalConfig.Connection.CreatePrize(model);
 
                 //After successful save, clear fields
                 placeNameValue.Text = "";
