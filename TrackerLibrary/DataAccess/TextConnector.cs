@@ -12,11 +12,30 @@ namespace TrackerLibrary
     {
 
         private const string PrizesFile = "PrizeModels.csv";
-        private const string PeopleFile = "PeopleModels.csv";//TODO fix file name.
+        private const string PersonFile = "PersonModels.csv";//TODO fix file name.
 
         public PersonModel CreatePerson(PersonModel model)
         {
-            throw new NotImplementedException();
+            //*load the text file
+            //*convert text to a list of PersonMdel
+            List<PersonModel> people = PersonFile.FullFilePath().LoadFile().ConvertToPersonModels();
+            //find the ID
+            int currentId = 1;
+
+            if (people.Count() > 0)
+            {
+                currentId = people.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+            //Add the recort with the new ID
+            model.Id = currentId;
+            people.Add(model);
+
+            //convert the prizes to a list of string
+            people.SaveToPersonFile(PersonFile);
+            //save the list of string to the text file
+
+            return model;
+
         }
 
         //TODO wire up to save to file
@@ -40,6 +59,11 @@ namespace TrackerLibrary
             //save the list of string to the text file
 
             return model;
+        }
+
+        public List<PersonModel> GetPerson_All()
+        {
+            throw new NotImplementedException();
         }
     }
 }
